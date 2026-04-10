@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  
+  /* Pastel Palette - More saturated for better visibility */
+  --color-pastel-blue: #bae6fd;
+  --color-pastel-blue-dark: #7dd3fc;
+  --color-pastel-indigo: #c7d2fe;
+  --color-pastel-indigo-dark: #a5b4fc;
+  --color-pastel-emerald: #a7f3d0;
+  --color-pastel-emerald-dark: #6ee7b7;
+  --color-pastel-amber: #fde68a;
+  --color-pastel-amber-dark: #fcd34d;
+  --color-pastel-rose: #fecdd3;
+  --color-pastel-rose-dark: #fda4af;
+  --color-pastel-mauve: #e9d5ff;
+  --color-pastel-mauve-dark: #d8b4fe;
+  --color-pastel-slate: #e2e8f0;
+  --color-pastel-slate-dark: #cbd5e1;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-pastel-blue);
+    color: #1e293b;
+  }
+
+  /* Accessibility: Focus states */
+  :focus-visible {
+    outline: 4px solid #6366f1;
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+
+  /* Dyslexia-friendly: Better line height and letter spacing */
+  p, span, div, input, button {
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+  }
+
+  /* Accessibility: Large touch targets */
+  button, input, select {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
