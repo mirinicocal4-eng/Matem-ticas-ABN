@@ -188,57 +188,58 @@ export default function Tabla100() {
 
   return (
     <div className="max-w-5xl mx-auto p-3 md:p-6 bg-pastel-mauve/70 rounded-[1.5rem] md:rounded-[3rem] shadow-2xl border-4 border-purple-50">
-      <header className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 mb-6 md:mb-8">
-        <div className="flex items-center gap-2 md:gap-4">
-          <div className="bg-purple-600 p-2 md:p-4 rounded-lg md:rounded-2xl text-white shadow-xl shadow-purple-100">
-            <Grid3X3 size={24} className="md:w-8 md:h-8" />
+      <header className="flex flex-col items-center gap-6 mb-8 text-center">
+        <div className="flex flex-col items-center gap-3">
+          <div className="bg-purple-600 p-4 rounded-2xl text-white shadow-xl shadow-purple-100">
+            <Grid3X3 size={32} />
           </div>
           <div>
-            <h2 className="text-xl md:text-3xl font-black text-slate-800 leading-tight">Tabla del 100</h2>
-            <div className="flex items-center gap-2 mt-1">
-              <span className="h-1 w-8 bg-purple-400 rounded-full hidden md:block"></span>
-              <p className="text-purple-600 font-black text-xs md:text-base italic tracking-wide">Familias y pandillas</p>
+            <h2 className="text-2xl md:text-4xl font-black text-slate-800 leading-tight">Tabla del 100</h2>
+            <div className="flex items-center justify-center gap-3 mt-2">
+              <div className="h-1.5 w-12 bg-purple-500 rounded-full"></div>
+              <p className="text-purple-700 font-black text-sm md:text-xl italic tracking-tight">Familias y pandillas</p>
+              <div className="h-1.5 w-12 bg-purple-500 rounded-full"></div>
             </div>
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-2 bg-slate-100 p-2 rounded-2xl">
+        <div className="flex flex-wrap justify-center gap-3 bg-white/50 backdrop-blur-sm p-3 rounded-[2rem] border-2 border-purple-100 shadow-inner">
           <button 
             onClick={() => setMode('explore')}
-            className={`px-4 py-2 rounded-xl font-black transition-all shadow-sm ${mode === 'explore' ? 'bg-purple-600 text-white scale-105 shadow-purple-200' : 'text-slate-500 hover:bg-white'}`}
+            className={`px-6 py-3 rounded-2xl font-black transition-all shadow-sm ${mode === 'explore' ? 'bg-purple-600 text-white scale-105 shadow-purple-200' : 'text-slate-500 hover:bg-white'}`}
           >
             Explorar
           </button>
           <button 
             onClick={startHideChallenge}
-            className={`px-4 py-2 rounded-xl font-black transition-all flex items-center gap-2 shadow-sm ${mode === 'hide' ? 'bg-purple-600 text-white scale-105 shadow-purple-200' : 'text-slate-500 hover:bg-white'}`}
+            className={`px-6 py-3 rounded-2xl font-black transition-all flex items-center gap-2 shadow-sm ${mode === 'hide' ? 'bg-purple-600 text-white scale-105 shadow-purple-200' : 'text-slate-500 hover:bg-white'}`}
           >
-            <EyeOff size={18} /> Escondite
+            <EyeOff size={20} /> Escondite
           </button>
           <button 
             onClick={startCruciChallenge}
-            className={`px-4 py-2 rounded-xl font-black transition-all flex items-center gap-2 shadow-sm ${mode === 'cruci' ? 'bg-purple-600 text-white scale-105 shadow-purple-200' : 'text-slate-500 hover:bg-white'}`}
+            className={`px-6 py-3 rounded-2xl font-black transition-all flex items-center gap-2 shadow-sm ${mode === 'cruci' ? 'bg-purple-600 text-white scale-105 shadow-purple-200' : 'text-slate-500 hover:bg-white'}`}
           >
-            <LayoutGrid size={18} /> Crucinúmero
+            <LayoutGrid size={20} /> Crucinúmero
           </button>
           <button 
             onClick={startPathChallenge}
-            className={`px-4 py-2 rounded-xl font-black transition-all flex items-center gap-2 shadow-sm ${mode === 'path' ? 'bg-indigo-600 text-white scale-105 shadow-indigo-200' : 'text-slate-500 hover:bg-white'}`}
+            className={`px-6 py-3 rounded-2xl font-black transition-all flex items-center gap-2 shadow-sm ${mode === 'path' ? 'bg-purple-600 text-white scale-105 shadow-purple-200' : 'text-slate-500 hover:bg-white'}`}
           >
-            <RefreshCcw size={18} /> Camino
+            <RefreshCcw size={20} /> Camino
           </button>
           <button 
             onClick={startRetroChallenge}
-            className={`px-4 py-2 rounded-xl font-black transition-all flex items-center gap-2 shadow-sm ${mode === 'retro' ? 'bg-indigo-600 text-white scale-105 shadow-indigo-200' : 'text-slate-500 hover:bg-white'}`}
+            className={`px-6 py-3 rounded-2xl font-black transition-all flex items-center gap-2 shadow-sm ${mode === 'retro' ? 'bg-purple-600 text-white scale-105 shadow-purple-200' : 'text-slate-500 hover:bg-white'}`}
           >
-            <ArrowLeftCircle size={18} /> Retrocuenta
+            <ArrowLeftCircle size={20} /> Retrocuenta
           </button>
         </div>
       </header>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+      <div className="flex flex-col gap-6 md:gap-8">
         {/* La Tabla */}
-        <div className="lg:col-span-2 overflow-x-auto">
+        <div className="overflow-x-auto">
           <div className="grid grid-cols-10 gap-1 md:gap-2 bg-slate-50 p-1 md:p-4 rounded-[1.5rem] md:rounded-[2rem] border-2 border-slate-100 min-w-[280px]">
             {Array.from({ length: 100 }).map((_, i) => {
               const num = i + 1;
@@ -282,8 +283,8 @@ export default function Tabla100() {
           </div>
         </div>
 
-        {/* Panel Lateral de Retos */}
-        <div className="space-y-6">
+        {/* Panel Lateral de Retos (Ahora abajo) */}
+        <div className="w-full max-w-2xl mx-auto space-y-6">
           {mode === 'explore' && (
             <div className="bg-indigo-50 p-6 rounded-3xl border-2 border-indigo-100">
               <h3 className="font-black text-indigo-800 mb-4 flex items-center gap-2">
@@ -379,27 +380,27 @@ export default function Tabla100() {
           )}
 
           {mode === 'path' && pathChallenge && (
-            <div className="bg-amber-50 p-6 rounded-3xl border-2 border-amber-100">
-              <h3 className="font-black text-amber-800 mb-4 flex items-center gap-2">
+            <div className="bg-purple-50 p-6 rounded-3xl border-2 border-purple-100">
+              <h3 className="font-black text-purple-800 mb-4 flex items-center gap-2">
                 <RefreshCcw size={20} /> Camino Numérico
               </h3>
               
               <div className="space-y-4 mb-6">
                 <div className="flex items-center gap-3">
-                  <span className="text-xs font-black text-amber-600 uppercase">Inicio:</span>
-                  <span className="bg-amber-500 text-white px-3 py-1 rounded-lg font-black">{pathChallenge.start}</span>
+                  <span className="text-xs font-black text-purple-600 uppercase">Inicio:</span>
+                  <span className="bg-purple-500 text-white px-3 py-1 rounded-lg font-black">{pathChallenge.start}</span>
                 </div>
                 
                 <div className="flex flex-wrap gap-2">
                   {pathChallenge.moves.map((move, i) => (
-                    <div key={i} className="bg-white border-2 border-amber-200 px-3 py-2 rounded-xl flex flex-col items-center shadow-sm">
-                      <span className="text-[10px] text-amber-400 font-bold">Mueve</span>
-                      <span className="text-lg font-black text-amber-700">{move.label}</span>
+                    <div key={i} className="bg-white border-2 border-purple-200 px-3 py-2 rounded-xl flex flex-col items-center shadow-sm">
+                      <span className="text-[10px] text-purple-400 font-bold">Mueve</span>
+                      <span className="text-lg font-black text-purple-700">{move.label}</span>
                     </div>
                   ))}
                 </div>
 
-                <p className="text-sm text-amber-700 font-medium italic">
+                <p className="text-sm text-purple-700 font-medium italic">
                   Marca el camino en la tabla y pulsa el botón al llegar al destino.
                 </p>
               </div>
@@ -425,7 +426,7 @@ export default function Tabla100() {
 
               <button 
                 onClick={startPathChallenge}
-                className="w-full bg-amber-600 text-white py-3 rounded-xl font-bold hover:bg-amber-700 transition-all flex items-center justify-center gap-2 shadow-lg"
+                className="w-full bg-purple-600 text-white py-3 rounded-xl font-bold hover:bg-purple-700 transition-all flex items-center justify-center gap-2 shadow-lg"
               >
                 <RefreshCcw size={18} /> Nuevo Camino
               </button>
@@ -433,37 +434,37 @@ export default function Tabla100() {
           )}
 
           {mode === 'retro' && retroStart !== null && (
-            <div className="bg-rose-50 p-6 rounded-3xl border-2 border-rose-100">
-              <h3 className="font-black text-rose-800 mb-4 flex items-center gap-2">
+            <div className="bg-purple-50 p-6 rounded-3xl border-2 border-purple-100">
+              <h3 className="font-black text-purple-800 mb-4 flex items-center gap-2">
                 <ArrowLeftCircle size={20} /> Retrocuenta
               </h3>
               
               <div className="text-center space-y-4">
-                <p className="text-sm text-rose-700 font-medium">
+                <p className="text-sm text-purple-700 font-medium">
                   Cuenta hacia atrás desde el <b>{retroStart}</b>.
                 </p>
                 
                 <div className="flex justify-center items-center gap-4">
-                  <div className="bg-white p-4 rounded-2xl border-2 border-rose-200 shadow-sm">
-                    <span className="text-xs block text-rose-400 font-bold uppercase">Siguiente</span>
-                    <span className="text-3xl font-black text-rose-600">{retroTarget}</span>
+                  <div className="bg-white p-4 rounded-2xl border-2 border-purple-200 shadow-sm">
+                    <span className="text-xs block text-purple-400 font-bold uppercase">Siguiente</span>
+                    <span className="text-3xl font-black text-purple-600">{retroTarget}</span>
                   </div>
                 </div>
 
-                <div className="text-rose-600 font-black text-xl">
+                <div className="text-purple-600 font-black text-xl">
                   Pasos: {retroCount}
                 </div>
 
                 {retroTarget === 0 && (
                   <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="text-center mt-4">
                     <Trophy className="mx-auto text-amber-500 mb-2" size={48} />
-                    <p className="font-black text-rose-800">¡Misión Cumplida!</p>
+                    <p className="font-black text-purple-800">¡Misión Cumplida!</p>
                   </motion.div>
                 )}
 
                 <button 
                   onClick={startRetroChallenge}
-                  className="w-full mt-4 bg-rose-600 text-white py-3 rounded-xl font-bold hover:bg-rose-700 transition-all flex items-center justify-center gap-2 shadow-lg"
+                  className="w-full mt-4 bg-purple-600 text-white py-3 rounded-xl font-bold hover:bg-purple-700 transition-all flex items-center justify-center gap-2 shadow-lg"
                 >
                   <RefreshCcw size={18} /> Reiniciar
                 </button>

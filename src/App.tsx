@@ -23,14 +23,7 @@ export default function App() {
 
   const getBgColor = () => {
     if (highContrast) return 'bg-white';
-    switch (activeTab) {
-      case 'numeration': return 'bg-pastel-indigo/60';
-      case 'amigos': return 'bg-pastel-rose/60';
-      case 'tabla': return 'bg-pastel-mauve/70';
-      case 'operations': return 'bg-pastel-amber/60';
-      case 'problems': return 'bg-pastel-emerald/60';
-      default: return 'bg-pastel-blue/60';
-    }
+    return 'bg-pastel-indigo/60';
   };
 
   return (
