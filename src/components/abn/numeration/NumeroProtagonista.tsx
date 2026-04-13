@@ -307,8 +307,8 @@ export default function NumeroProtagonista() {
                   {number >= 100 && (
                     <div className="bg-pastel-emerald p-6 md:p-8 rounded-[2rem] border-4 border-dashed border-emerald-300 min-h-[200px]">
                       <h4 className="text-center font-black text-emerald-800 mb-6 uppercase tracking-widest text-sm">Placas de 100 ({userCentenas})</h4>
+                      {userCentenas === 0 && <p className="text-emerald-400 font-bold italic text-lg text-center w-full mb-4">Añade centenas verdes</p>}
                       <div className="flex flex-wrap gap-4 justify-center items-center min-h-[120px]">
-                        {userCentenas === 0 && <p className="text-emerald-400 font-bold italic text-lg text-center w-full">Añade centenas verdes</p>}
                         {Array.from({ length: userCentenas }).map((_, i) => (
                           <motion.div
                             key={`centena-${i}`}
@@ -330,8 +330,8 @@ export default function NumeroProtagonista() {
 
                   <div className="bg-pastel-rose p-6 md:p-8 rounded-[2rem] border-4 border-dashed border-rose-300 min-h-[200px]">
                     <h4 className="text-center font-black text-rose-800 mb-6 uppercase tracking-widest text-sm">Paquetes de 10 ({userDecenas})</h4>
+                    {userDecenas === 0 && <p className="text-rose-400 font-bold italic text-lg text-center w-full mb-4">Añade decenas rojas</p>}
                     <div className="flex flex-wrap gap-4 md:gap-8 justify-center items-center min-h-[120px]">
-                      {userDecenas === 0 && <p className="text-rose-400 font-bold italic text-lg text-center w-full">Añade decenas rojas</p>}
                       {Array.from({ length: userDecenas }).map((_, i) => (
                         <motion.div
                           key={`decena-${i}`}
@@ -353,8 +353,8 @@ export default function NumeroProtagonista() {
 
                   <div className="bg-pastel-blue p-6 md:p-8 rounded-[2rem] border-4 border-dashed border-blue-300 min-h-[200px]">
                     <h4 className="text-center font-black text-blue-800 mb-6 uppercase tracking-widest text-sm">Palillos Sueltos ({userUnidades})</h4>
+                    {userUnidades === 0 && <p className="text-blue-400 font-bold italic text-lg text-center w-full mb-4">Añade unidades azules</p>}
                     <div className="flex flex-wrap gap-2 md:gap-4 justify-center items-end min-h-[120px]">
-                      {userUnidades === 0 && <p className="text-blue-400 font-bold italic text-lg text-center w-full">Añade unidades azules</p>}
                       {Array.from({ length: userUnidades }).map((_, i) => (
                         <motion.div
                           key={`unidad-${i}`}
