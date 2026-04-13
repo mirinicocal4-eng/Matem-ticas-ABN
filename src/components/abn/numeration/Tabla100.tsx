@@ -195,7 +195,10 @@ export default function Tabla100() {
           </div>
           <div>
             <h2 className="text-xl md:text-3xl font-black text-slate-800 leading-tight">Tabla del 100</h2>
-            <p className="text-slate-500 font-bold text-[10px] md:text-sm italic">Familias y pandillas</p>
+            <div className="flex items-center gap-2 mt-1">
+              <span className="h-1 w-8 bg-purple-400 rounded-full hidden md:block"></span>
+              <p className="text-purple-600 font-black text-xs md:text-base italic tracking-wide">Familias y pandillas</p>
+            </div>
           </div>
         </div>
 

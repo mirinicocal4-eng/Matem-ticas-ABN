@@ -4,9 +4,10 @@ import { Hash, Heart, Grid3X3, Calculator, BrainCircuit, BookOpen } from 'lucide
 
 interface LandingPageProps {
   onStart: () => void;
+  onNavigate: (tab: 'numeration' | 'operations' | 'problems' | 'amigos' | 'tabla') => void;
 }
 
-export default function LandingPage({ onStart }: LandingPageProps) {
+export default function LandingPage({ onStart, onNavigate }: LandingPageProps) {
   return (
     <motion.div
       key="landing"
@@ -47,22 +48,25 @@ export default function LandingPage({ onStart }: LandingPageProps) {
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12">
           {[
-            { icon: Hash, label: "Números", color: "bg-indigo-100 text-indigo-600" },
-            { icon: Heart, label: "Amigos", color: "bg-rose-100 text-rose-600" },
-            { icon: Grid3X3, label: "Tabla 100", color: "bg-purple-100 text-purple-600" },
-            { icon: Calculator, label: "Cálculo", color: "bg-orange-100 text-orange-600" },
-            { icon: BrainCircuit, label: "Problemas", color: "bg-emerald-100 text-emerald-600" }
+            { icon: Hash, label: "Números", color: "bg-indigo-100 text-indigo-600", tab: 'numeration' as const },
+            { icon: Heart, label: "Amigos", color: "bg-rose-100 text-rose-600", tab: 'amigos' as const },
+            { icon: Grid3X3, label: "Tabla 100", color: "bg-purple-100 text-purple-600", tab: 'tabla' as const },
+            { icon: Calculator, label: "Cálculo", color: "bg-orange-100 text-orange-600", tab: 'operations' as const },
+            { icon: BrainCircuit, label: "Problemas", color: "bg-emerald-100 text-emerald-600", tab: 'problems' as const }
           ].map((item, i) => (
-            <motion.div
+            <motion.button
               key={i}
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4 + i * 0.1 }}
-              className={`${item.color} p-4 rounded-2xl flex flex-col items-center gap-2 shadow-sm border-2 border-white`}
+              whileHover={{ scale: 1.05, y: -5 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => onNavigate(item.tab)}
+              className={`${item.color} p-4 rounded-2xl flex flex-col items-center gap-2 shadow-sm border-2 border-white transition-all hover:shadow-md`}
             >
               <item.icon size={24} strokeWidth={3} />
               <span className="text-[10px] font-black uppercase tracking-wider">{item.label}</span>
-            </motion.div>
+            </motion.button>
           ))}
         </div>
 

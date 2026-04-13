@@ -37,7 +37,13 @@ export default function App() {
     <div className={`min-h-screen transition-colors duration-500 ${getBgColor()} ${highContrast ? 'text-black' : ''}`}>
       <AnimatePresence mode="wait">
         {showLanding ? (
-          <LandingPage onStart={() => setShowLanding(false)} />
+          <LandingPage 
+            onStart={() => setShowLanding(false)} 
+            onNavigate={(tab) => {
+              setActiveTab(tab);
+              setShowLanding(false);
+            }}
+          />
         ) : (
           <motion.div
             key="app"
